@@ -1,9 +1,11 @@
 # Installation
 1. Install Python 3
 2. Download ZIP or clone the repository
+3. Enter the videocampus-sachsen-downloader directory
+4. Execute `./install.sh` to install the program
 
 # Usage
-1. Execute `python3 vcs-downloader.py`
+1. Open a terminal and write `vcs-downloader`
 2. Enter the video stream URL
 3. Give the file a name and wait for the download to finish
 

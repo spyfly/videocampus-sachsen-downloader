@@ -15,3 +15,7 @@
 3. Now right click one of the marked URLs with a .ts file extension and copy the URL as seen on the image below.
 
 ![Example](./example.png "Network Inspector Example")
+
+# Authentication
+Sometimes the application may prompt you for authentication. In that case just copy the PHPSESSID from your browser, so that the downloader can authenticate aswell.
+![Authentication](./auth.png "Authentication Example")

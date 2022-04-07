@@ -12,6 +12,7 @@ print("Downloading from " + downloadUrl)
 filesize = 100
 i = 0
 videodata = ""
+phpSessId = None
 while filesize > 0:
     numberStr = str(i)
     if i < 1000:
@@ -20,10 +21,18 @@ while filesize > 0:
     localFile = numberStr + ".ts"
     print(url)
     #urllib.request.urlretrieve(url, localFile)
-    response = urllib.request.urlopen(url)
-    ts = response.read()
-    filesize = len(ts)
-    tsfile = open(filename, 'ab')
-    tsfile.write(ts)
-    #filesize = os.stat(localFile).st_size
-    i = i + 1
+    try:
+        request = urllib.request.Request(url)
+        # Add login Cookie
+        if (phpSessId):
+            request.add_header("Cookie", "PHPSESSID=" + phpSessId)
+        response = urllib.request.urlopen(request)
+        ts = response.read()
+        filesize = len(ts)
+        tsfile = open(filename, 'ab')
+        tsfile.write(ts)
+        #filesize = os.stat(localFile).st_size
+        i = i + 1
+    except urllib.error.HTTPError as e:
+        if (e.code == 404):
+            phpSessId = input("Please enter the PHPSESSID Cookie: ")

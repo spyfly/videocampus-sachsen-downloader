@@ -45,6 +45,9 @@ while filesize > 0:
         if (e.code == 404):
             if (i < 10):
                 phpSessId = input("Please enter the PHPSESSID Cookie: ")
+            else:
+                # Pretend filesize is 0 to exit loop
+                filesize = 0
         else:
             print('HTTP Error at', url, '| Code:', e.code)
 print('Done downloading ' + localFile + '!')

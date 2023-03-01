@@ -10,7 +10,7 @@ else:
 downloadUrl = re.sub("_[0-9]{3}.ts", "", downloadUrl)
 
 if (len(sys.argv) > 2 and sys.argv[2]):
-    filename = sys.argv[2]
+    filename = sys.argv[2] + ".ts"
 else:
     filename = input("File Name? (No ext and special chars): ") + ".ts"
 print("Downloading from " + downloadUrl)

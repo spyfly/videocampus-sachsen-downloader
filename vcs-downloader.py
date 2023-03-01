@@ -43,5 +43,8 @@ while filesize > 0:
         i = i + 1
     except urllib.error.HTTPError as e:
         if (e.code == 404):
-            phpSessId = input("Please enter the PHPSESSID Cookie: ")
+            if (i < 10):
+                phpSessId = input("Please enter the PHPSESSID Cookie: ")
+        else:
+            print('HTTP Error at', url, '| Code:', e.code)
 print('Done downloading ' + localFile + '!')

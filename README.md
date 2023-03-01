@@ -4,10 +4,13 @@
 3. Enter the videocampus-sachsen-downloader directory
 4. Execute `./install.sh` to install the program
 
-# Usage
+# Interactive Usage
 1. Open a terminal and write `vcs-downloader`
 2. Enter the video stream URL
 3. Give the file a name and wait for the download to finish
+
+# CLI Usage
+1. Write `vcs-downloader [Download-URL] [Target-Filename]`
 
 # Retrieving the video stream URL
 1. Open the console of your browser (F12) and select the Network Inspector Tab
